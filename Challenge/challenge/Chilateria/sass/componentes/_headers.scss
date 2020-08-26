@@ -1,0 +1,78 @@
+.header--principal {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px 20px 
+    20px;
+    // margin-bottom: 20px;
+    width: 100%;
+    height: 90px;
+    // border-bottom: 1px solid #ebebeb;
+    background-color: $color-fondo;
+}
+
+.logo--header {
+    display: flex;
+    align-items: center;
+    margin: auto 0px;
+    // padding-top: 35px;
+    img {
+        width: 60px;
+        height: 60px;
+        margin: 15px auto 15px 15px;
+    }
+    h2 {
+        margin-left: 10px;
+        color: $color-claro;
+        @include titulos($Fuente1);
+        // h2:hover {
+        //     text-decoration: none;
+        // }
+        
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+/*Puede ser un mixin*/
+.nav--header ul {
+    display: none;
+    padding-top: 35px;
+    li {
+        list-style: none;
+        margin-right: 50px;
+    }
+    a {
+        color: $color-claro;
+        @include titulos($Fuente1);
+        
+    }
+
+    /*Recomendacion: cualquier media querie la agrego al final*/
+    @include media(desktop-s) { /*Cuando mi pantalla este una version desktop-s*/
+        display: flex;
+    }
+}
+/*Puede ser un mixin*/
+
+.nav__menu--redes {
+    display: none;
+    margin-left: auto;
+    // padding-top: 35px;
+    &:hover {
+        text-decoration: none;
+    }
+    i {
+        font-size: 20px;
+        margin-right: 10px;
+        color: $color-claro;
+    }
+    span {
+        color: $color-variacion;
+        @include titulos($Fuente1);
+    }
+    /*Recomendacion: cualquier media querie la agrego al final*/
+    @include media(desktop-s) { /*Cuando mi pantalla este una version desktop-s*/
+        display: flex;
+    }
+} 

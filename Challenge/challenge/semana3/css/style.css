@@ -1,0 +1,112 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Muli', sans-serif;
+    background-image: url('../assets/img/studyofdista.jpg');
+}
+.wrap {
+    width: 100%;
+    
+}
+.header {
+    width: 100%;
+    height: 100px;
+    /*background-image: url('../assets/img/studyofdista.jpg');*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header nav {
+    width: 100%;
+}
+.header__img {
+    width: 175px;
+    height: 50px;
+    margin-left: 150px;
+    object-fit: cover;
+    
+}
+.header__nav--ul {
+    display: flex;
+    list-style: none;
+    margin-right: 125px;
+    font-size: 12px;
+}
+.header__nav--ul a {
+    margin-right: 25px;
+    color: white    ;
+    text-decoration: none;
+    cursor: pointer;
+}
+/*De aqui hacia abajo va todo lo del buscador principal*/
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 300px;
+    
+}
+.main h1 {
+    width: 600px;
+    text-align: center;
+    color: white;
+    font-size: 45px;
+}
+.main p {
+    width: 600px;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+.main .button-left {
+    width: 150px;
+    height: 50px;
+    background-color: #5bb22f;
+    color: white;
+    border: none;
+}
+.main .button-right {
+    width: 150px;
+    height: 50px;
+    background-color: #ececec;
+    color: #adadad;
+    border: none;
+}
+
+/*Lo que sigue es para el footer*/
+.footer {
+    height: 400px;
+    width: 100%;
+    background-color: white;
+    
+}
+.footer__section {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-right: 100px;
+    margin-left: 100px;
+}
+.footer div {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    color: #adadad;
+}
+.footer__section div img {
+    width: 80px;
+    object-fit: cover;
+    background-color: #5bb22f;
+}
+.footer__section div p {
+    text-align: center;
+    color: #adadad;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
