@@ -1,0 +1,77 @@
+//ver diseno
+//explicar estructura completa
+//hacer header
+//hacer footer
+//hacer plantilla
+//pegar en todas las otras paginas
+
+//Variables Circular, spotify-circular, Helvetica, Arial, sans-serif;
+$Fuente1: 'Lato', sans-serif;
+$Fuente2: 'Oswald', sans-serif;
+$color-primario: #662b14;
+$color-secundario: #ae491a;
+$color-variacion: rgb(185,122,87);
+$color-fondo: #861010; //#b52310;
+$color-claro: #FFF;
+
+//Mixins
+@mixin caja {
+	// max-width: 100%;
+	margin: 20px 20px 20px 20px;
+	border: 1px solid $color-claro;
+	border-radius: 50px;
+	//
+	color: $color-primario;
+	box-shadow: 0px 20px 33px 0px rgba(0,0,0,0.20);
+}
+
+@mixin titulos($fuente) {
+	@if $fuente ==$Fuente1 {
+		font-family: $Fuente1;
+	} @else {
+		font-family: $Fuente2;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+}
+
+/*Mixin de la comunidad de SASS*/
+@function calculateRem($size) {
+	$remSize: $size / 16px;
+	@return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+	font-size: $size; /*mandamos el tamano de la letra*/
+	font-size: calculateRem($size); /*calculateRem() dependiendo el tamano en pixeles que le mandas como parametro, hace el calculo a rem*/
+	line-height: calculateRem($size)* 1.5; /*calcula el line-height basado en el tamano de nuestra fuente;*/
+}
+/*Mixin de la comunidad de SASS*/
+
+// Funciones
+@function get-opacity($color, $amount) {
+  @return rgba($color, $amount);
+}
+
+@each $header, $size in (h1: 30px, h2: 25px, h3: 20px) {
+  #{$header} {
+		font-size: $size;
+		@include titulos($Fuente1);
+		margin: 0;
+  }
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #F9FAFC;
+	color: $color-primario;
+	@include titulos($Fuente1);
+	@include font-size(18px);
+}
+
+main {
+	display: flex;
+	// width: 100%;
+	background-image: linear-gradient( 181.3deg,  rgba(134,15,15,1) 24.9%, rgba(183,10,10,1) 46.9%, rgba(210,70,0,1) 85.1% );
+}
