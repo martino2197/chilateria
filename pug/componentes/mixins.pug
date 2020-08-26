@@ -1,0 +1,124 @@
+mixin stats(valor,leyenda)
+	.estadistica_elemento
+		h3=valor
+		span=leyenda
+mixin article(categoria,titulo, descripcion)
+	.articulo
+		span.articulo__categoria=categoria
+		h2.articulo__titulo=titulo
+		p.articulo__descripcion=descripcion
+
+
+
+
+mixin caja--estadistica(imagen, category, title, summary)
+	.caja
+		.caja__imagen: img(src="../images/"+imagen)
+		.caja__contenido
+			span.caja__categoria=category
+			h3=title
+			p=summary
+		+estadistica
+
+mixin estadistica
+	.estadistica--articulos: ul
+		li
+			i.fas.fa-share
+			span 275
+		li
+			i.fas.fa-eye
+			span 275
+		li
+			i.fas.fa-comment-alt
+			span 12
+
+mixin estadistica--caja-con-fondo
+	.caja--con-fondo__stats: ul
+		li
+			i.fas.fa-share
+			span 275
+		li
+			i.fas.fa-eye
+			span 275
+		li
+			i.fas.fa-comment-alt
+			span 12
+
+mixin caja--con-fondo-grande (imagen, categoria, titulo, contenido)
+	a(class="caja--con-fondo caja--grande")
+		.caja__imagen: img(src="../images/"+imagen)
+		.caja--con-fondo__contenido
+			span.caja--con-fondo__categoria=categoria
+			h2=titulo
+			p=contenido
+		+estadistica--caja-con-fondo
+
+mixin caja--con-fondo-mediana (clase, imagen, categoria, titulo, contenido)
+	a(class="caja--con-fondo caja--mediana " + clase)
+		.caja__imagen: img(src="../images/"+imagen)
+		.caja--con-fondo__contenido
+			span.caja--con-fondo__categoria=categoria
+			h2=titulo
+		+estadistica--caja-con-fondo
+
+mixin caja--con-fondo-pequena (clase, imagen, categoria, titulo, contenido)
+	a(class="caja--con-fondo caja--pequena " + clase)
+		.caja__imagen: img(src="../images/"+imagen)
+		.caja--con-fondo__contenido
+			span.caja--con-fondo__categoria=categoria
+			h2=titulo
+		+estadistica--caja-con-fondo
+
+mixin listado-categoria(numero,titulo)
+	li: a(href="#")
+		span.sidebar--listado__numero=numero
+		span.sidebar--listado__titulo=titulo
+
+
+//- chilateria landing
+mixin caja--landing (imagen)
+	a(class="caja--con-fondo caja--grande")
+		.caja__imagen: video(class="html-video" src="../images/"+imagen /*width="1280" height="720"*/ controls="autoplay")
+		//- .caja__imagen: img(src="../images/"+imagen)
+
+mixin article--landing(categoria,titulo,boton)
+	.articulo
+		h2.articulo__titulo=titulo
+		button.articulo__button=boton
+
+//- articulos
+mixin caja--Derecha(imagen, categoria, titulo, contenido)
+	.caja
+		.caja__imagen--producto: img(src="../images/"+imagen)
+		.caja__contenido
+			h3=titulo
+			//- span.caja__categoria=categoria
+			
+			p=contenido
+			a Leer Mas	
+mixin caja--Izquierda(imagen, categoria, titulo, contenido)
+	.caja
+		.caja__contenido
+			h3=titulo
+			//- span.caja__categoria=categoria
+			
+			p=contenido
+			a Leer Mas
+		.caja__imagen--producto: img(src="../images/"+imagen)
+
+//- Sucursal
+mixin caja--Sucursal(imagen, categoria, titulo)
+	.cajaSucursal
+		.cajaSucursal__imagen: img(src="../images/"+imagen)
+		.cajaSucursal__contenido
+			iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3804.103548076354!2d-99.50113325268359!3d17.55025603767556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cbed13b4d48749%3A0x28786a76455eeaf3!2sLa%20Chilater%C3%ADa%20Chilpancingo!5e0!3m2!1ses-419!2smx!4v1597859663654!5m2!1ses-419!2smx" width="90%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0")
+
+//- Historias	
+mixin caja--Historia(imagen, categoria, titulo, contenido)
+	.cajaHistoria
+		.cajaHistoria__imagen: img(src="../images/"+imagen)
+		.cajaHistoria__contenido
+			span.cajaHistoria__categoria=categoria
+			h3=titulo
+			p=contenido
+				
